@@ -1,0 +1,2 @@
+<h1 style="color:white;margin:10px;background:green;"><marquee scrollamount="25" behavior="alternate">BẢO TRÌ</marquee></h1>
+<img src="img/maintain.jpg" style="width:80%;high:80%;padding-left:20%"></img>

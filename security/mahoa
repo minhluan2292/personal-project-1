@@ -1,0 +1,41 @@
+
+<html>
+	<head>
+		<title>Cipher</title>
+	</head>
+	<body>
+	<fieldset style="width: 50%; margin: 5px;">
+	  <legend>Encryption:</legend>
+		<lable>Plain Text</lable>
+		<input type="text" id="encryption_plain_text" >
+		<lable>Encryption Text</lable>
+		<input type="text" id="encryption_cipher_text" >
+		<button onclick="encryption()">Encryption</button>
+	</fieldset>
+		
+		<script>
+			function encryption(){
+				var plaintext=document.getElementById('encryption_plain_text').value;
+				var cipher=document.getElementById('encryption_cipher_text');
+				var encryption="";
+				var char="";
+				var ascii="";
+				
+				for(i=0;i<plaintext.length;i++){
+					char=plaintext.slice(i, i+1);
+					//alert(char);
+					ascii=char.charCodeAt()+1;
+					if(ascii>255){
+						ascii=ascii-255;
+					}
+					encryption=encryption+String.fromCharCode(ascii);
+					
+				}
+				 cipher.value = encryption;
+				//Encryption=Encryption..map(ascii);
+				
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,211 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>Bai bao cao nhom 7</title>
+<link rel="stylesheet" type="text/css" href="/thanhtu/style.css"/>
+</head>
+<body>
+<h3 style="text-align:center; color:blue;"><B>TRƯỜNG CAO ĐẲNG KỸ THUẬT CAO THẮNG</B></h3>
+<h2 style="text-align:center; color:black;"><b>BÁO CÁO ĐỒ ÁN MÔN MẠNG CÔNG NGHIỆP</b></h3>
+<h1 style="text-align:center; color:red;"><b>ĐỀ TÀI ĐIỀU KHIỂN PLC QUA WEB SERVER/INTERNET</b></h1>
+<h3 style="text-align:center; color:brown;">GVHD: VÕ XUÂN NAM </h3>
+<h3 style="text-align:center; color:brown;">SVTH: ĐOÀN CHÂU THANH HIẾU</h3>
+<h3 style="text-align:center; color:brown;">LÊ PHÚC THỊNH </h3>
+<h3 style="text-align:center; color:brown;">ĐOÀN THANH TÚ </h3>
+<h1>NỘI DUNG THỰC HIỆN</h1></br></br>
+<b>HIỂN THỊ TRẠNG THÁI CÁC ĐÈN</b></br>
+X1::="XANH1":</br>
+V1::="VANG1":</br>
+Đ1::="DO1":</br>
+X2::="XANH2":</br>
+V2::="VANG2":</br>
+Đ2::="DO2":</br>
+<b>TRẠNG THÁI HOẠT ĐỘNG</b></br>
+RUN::="START":</br>
+STOP::="STOP":<br>
+<b>ĐIỀU KHIỂN HOẠT ĐỘNG</b></br>
+<input type="submit" value="START" onclick="test()">
+<input type="hidden" name='"START"' value='"1"'>
+</br></BR>
+<input type="submit" value="STOP">
+<input type="hidden" name='"STOP"' value='"0"'>
+</br>
+<b>CÀI ĐẶT THỜI GIAN CHO ĐÈN</b></br>
+<form method="post">
+<p>XANH1:<input id="xanh1" name='"NHAPX1"' type="text"></p>
+<p>VANG1:<input id="vang1" name='"NHAPV1"' type="text"></p>
+<p>XANH2:<input id="xanh2" name='"NHAPX1"' type="text"></p>
+<p>VANG2:<input id="vang2" name='"NHAPV2"' type="text"></p>
+
+
+</form>
+ <b>HIỂN THỊ HÌNH ẢNH<B>
+</BR>
+
+	 
+	 
+	 <table id="tabletest">
+		 <tr>
+			 <td></td>
+			 <td></td>
+			 <td></td>
+			 <td><div id="circlered1" class="circle"></div></td>
+			 <td></td>
+			 <td></td>
+			 <td></td>
+		 </tr>
+		 <tr>
+			 <td></td>
+			 <td></td>
+			 <td></td>
+			 <td><div id="circleyellow1" class="circle"></div></td>
+			 <td></td>
+			 <td></td>
+			 <td></td>
+		 </tr>
+		 <tr>
+			 <td></td>
+			 <td></td>
+			 <td></td>
+			 <td><div id="circlegreen1" class="circle"></div></td>
+			 <td></td>
+			 <td></td>
+			 <td></td>
+		 </tr>
+		 <tr>
+			 <td><div id="circlered2" class="circle"></div></td>
+			 <td><div id="circleyellow2" class="circle"></div></td>
+			 <td><div id="circlegreen2" class="circle"></div></td>
+			 <td></td>
+			 <td><div id="circlered2" class="circle"></div></td>
+			 <td><div id="circleyellow2" class="circle"></div></td>
+			 <td><div id="circlegreen2" class="circle"></div></td>
+		 </tr>
+		 <tr>
+			 <td></td>
+			 <td></td>
+			 <td></td>
+			 <td><div id="circlered1" class="circle"></div></td>
+			 <td></td>
+			 <td></td>
+			 <td></td>
+		 </tr>
+		 <tr>
+			 <td></td>
+			 <td></td>
+			 <td></td>
+			 <td><div id="circleyellow1" class="circle"></div></td>
+			 <td></td>
+			 <td></td>
+			 <td></td>
+		 </tr>
+		 <tr>
+			 <td></td>
+			 <td></td>
+			 <td></td>
+			 <td><div id="circlegreen1" class="circle"></div></td>
+			 <td></td>
+			 <td></td>
+			 <td></td>
+		 </tr>
+	 </table>
+	</body>
+</html>
+<script>
+	function test()
+	{
+		var i = 0;
+		var xanh1 = document.getElementById("xanh1").value;
+		var xanh2 = document.getElementById("xanh2").value;
+		var vang1 = document.getElementById("vang1").value;
+		var vang2 = document.getElementById("vang2").value;
+		var do2 = parseInt(xanh1) + parseInt(vang1);
+		var do1 = parseInt(xanh2) + parseInt(vang2);
+		var sum = parseInt(xanh1) + parseInt(vang1) + parseInt(do1);
+		
+		document.querySelectorAll('[id=circleyellow1]')[0].style.background="white";
+		document.querySelectorAll('[id=circleyellow1]')[1].style.background="white";
+		document.querySelectorAll('[id=circlegreen1]')[0].style.background="white";
+		document.querySelectorAll('[id=circlegreen1]')[1].style.background="white";
+		document.querySelectorAll('[id=circlered1]')[0].style.background="white";
+		document.querySelectorAll('[id=circlered1]')[1].style.background="white";
+		document.querySelectorAll('[id=circlegreen2]')[0].style.background="white";
+		document.querySelectorAll('[id=circlegreen2]')[1].style.background="white";
+		document.querySelectorAll('[id=circleyellow2]')[0].style.background="white";
+		document.querySelectorAll('[id=circleyellow2]')[1].style.background="white";
+		document.querySelectorAll('[id=circlered2]')[0].style.background="white";
+		document.querySelectorAll('[id=circlered2]')[1].style.background="white";
+		
+		setInterval(function()
+		{ 
+			if(i<=xanh1)
+			{
+				document.querySelectorAll('[id=circleyellow1]')[0].style.background="white";
+				document.querySelectorAll('[id=circleyellow1]')[1].style.background="white";
+				
+				document.querySelectorAll('[id=circlered2]')[0].style.background="red";
+				document.querySelectorAll('[id=circlered2]')[1].style.background="red";
+				
+				document.querySelectorAll('[id=circlegreen1]')[0].style.background="green";
+				document.querySelectorAll('[id=circlegreen1]')[1].style.background="green";
+				
+				document.querySelectorAll('[id=circlered1]')[0].style.background="white";
+				document.querySelectorAll('[id=circlered1]')[1].style.background="white";
+				
+				document.querySelectorAll('[id=circlegreen2]')[0].style.background="white";
+				document.querySelectorAll('[id=circlegreen2]')[1].style.background="white";
+				
+				document.querySelectorAll('[id=circleyellow2]')[0].style.background="white";
+				document.querySelectorAll('[id=circleyellow2]')[1].style.background="white";
+				i++;
+			}
+			else if(i<=do2)
+			{
+				document.querySelectorAll('[id=circleyellow1]')[0].style.background="yellow";
+				document.querySelectorAll('[id=circleyellow1]')[1].style.background="yellow";
+				
+				document.querySelectorAll('[id=circlered2]')[0].style.background="red";
+				document.querySelectorAll('[id=circlered2]')[1].style.background="red";
+				
+				document.querySelectorAll('[id=circlegreen1]')[0].style.background="white";
+				document.querySelectorAll('[id=circlegreen1]')[1].style.background="white";
+				
+				document.querySelectorAll('[id=circlered1]')[0].style.background="white";
+				document.querySelectorAll('[id=circlered1]')[1].style.background="white";
+				
+				document.querySelectorAll('[id=circlegreen2]')[0].style.background="white";
+				document.querySelectorAll('[id=circlegreen2]')[1].style.background="white";
+				
+				document.querySelectorAll('[id=circleyellow2]')[0].style.background="white";
+				document.querySelectorAll('[id=circleyellow2]')[1].style.background="white";
+				i++;
+			}
+			else if(i<=sum)
+			{
+				document.querySelectorAll('[id=circleyellow1]')[0].style.background="white";
+				document.querySelectorAll('[id=circleyellow1]')[1].style.background="white";
+				
+				document.querySelectorAll('[id=circlered2]')[0].style.background="white";
+				document.querySelectorAll('[id=circlered2]')[1].style.background="white";
+				
+				document.querySelectorAll('[id=circlegreen1]')[0].style.background="white";
+				document.querySelectorAll('[id=circlegreen1]')[1].style.background="white";
+				
+				document.querySelectorAll('[id=circlered1]')[0].style.background="red";
+				document.querySelectorAll('[id=circlered1]')[1].style.background="red";
+				
+				document.querySelectorAll('[id=circlegreen2]')[0].style.background="green";
+				document.querySelectorAll('[id=circlegreen2]')[1].style.background="green";
+				
+				document.querySelectorAll('[id=circleyellow2]')[0].style.background="white";
+				document.querySelectorAll('[id=circleyellow2]')[1].style.background="white";
+				i++;
+			}
+			else
+			{
+					i=0;
+			}
+		},1000); 
+	}
+</script>
+
