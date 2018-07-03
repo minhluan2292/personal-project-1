@@ -189,16 +189,16 @@
 
         <li class="dropdown">
           <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-						<?php session_start(); if (isset($_SESSION['username'])) { echo '<img src="img/avt.png" alt="" class="px-navbar-image">'; } ?>
+						<?php /*session_start(); if (isset($_SESSION['username'])) { echo '<img src="img/avt.png" alt="" class="px-navbar-image">'; } */?>
             
-            <span class="hidden-md"><?php session_start(); if (isset($_SESSION['username'])) { echo $_SESSION['username']; } else { echo "Account";} ?></span>
+            <span class="hidden-md"><?php /* session_start(); if (isset($_SESSION['username'])) { echo $_SESSION['username']; } else { echo "Account";}*/ ?></span>
           </a>
           <ul class="dropdown-menu">
 <!--             <li><a href="pages-profile-v2.html"><span class="label label-warning pull-xs-right"><i class="fa fa-asterisk"></i></span>Profile</a></li>
             <li><a href="pages-account.html">Account</a></li>
             <li><a href="pages-messages-list.html"><i class="dropdown-icon fa fa-envelope"></i>&nbsp;&nbsp;Messages</a></li>
             <li class="divider"></li> -->
-						<?php session_start(); if (isset($_SESSION['username'])) { echo '<li><a href="db/logout.php"><i class="dropdown-icon fa fa-power-off"></i>&nbsp;&nbsp;Log Out</a></li>'; } else { echo '<li><a href="?page=login"><i class="dropdown-icon fa fa-power-off"></i>&nbsp;&nbsp;Log  In</a></li>';} ?>
+						<?php /* session_start(); if (isset($_SESSION['username'])) { echo '<li><a href="db/logout.php"><i class="dropdown-icon fa fa-power-off"></i>&nbsp;&nbsp;Log Out</a></li>'; } else { echo '<li><a href="?page=login"><i class="dropdown-icon fa fa-power-off"></i>&nbsp;&nbsp;Log  In</a></li>';}*/ ?>
           </ul>
         </li>
 
