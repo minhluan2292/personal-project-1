@@ -152,6 +152,14 @@ function gettime()
       {
         h1 = (parseInt(h1) < 12) ? parseInt(h1)+12 : parseInt(h1);
       }
+     else
+       {
+         if(h1==12)
+           {
+             h1=0;
+           }
+       }
+    
     
     if(ss1 !== "--")
       {
@@ -176,7 +184,13 @@ function gettime()
       {
         h2 = (parseInt(h2) < 12) ? parseInt(h2)+12 : parseInt(h2);
       }
-    
+    else
+       {
+         if(h2==12)
+           {
+             h2=0;
+           }
+       }
     if(ss2 !== "--")
       {
         var d = new Date();
@@ -200,6 +214,13 @@ function gettime()
       {
         h3 = (parseInt(h3) < 12) ? parseInt(h3)+12 : parseInt(h3);
       }
+        else
+       {
+         if(h3==12)
+           {
+             h3=0;
+           }
+       }
     
     if(ss3 !== "--")
       {
