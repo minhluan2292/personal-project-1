@@ -3,7 +3,68 @@
 <head>
 <title>Page Title</title>
   <style>
-    
+/*         .checkbox > input[type=checkbox] {
+            visibility: hidden;
+          }
+
+          .checkbox {
+            position: relative;
+            display: block;
+            width: 80px;
+            height: 26px;
+            margin: 0 auto;
+            background: #FFF;
+            border: 1px solid #2E2E2E;
+            border-radius: 2px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+          }
+
+          .checkbox:after {
+            position: absolute;
+            display: inline;
+            right: 10px;
+            content: 'no';
+            color: #E53935;
+            font: 12px/26px Arial, sans-serif;
+            font-weight: bold;
+            text-transform: capitalize;
+            z-index: 0;
+          }
+
+          .checkbox:before {
+            position: absolute;
+            display: inline;
+            left: 10px;
+            content: 'yes';
+            color: #43A047;
+            font: 12px/26px Arial, sans-serif;
+            font-weight: bold;
+            text-transform: capitalize;
+            z-index: 0;
+          }
+
+          .checkbox label {
+            position: absolute;
+            display: block;
+            top: 3px;
+            left: 3px;
+            width: 34px;
+            height: 20px;
+            background: #2E2E2E;
+            cursor: pointer;
+            transition: all 0.5s linear;
+            -webkit-transition: all 0.5s linear;
+            -moz-transition: all 0.5s linear;
+            border-radius: 2px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            z-index: 1;
+          }
+
+          .checkbox input[type=checkbox]:checked + label {
+            left: 43px;
+          } */
   </style>
 </head>
 <body onload="javascript:start()">
@@ -15,6 +76,8 @@
     Time now:
 <label id="utmatning"></label>
   <br>
+<div style="display: inline-block;">
+ 
 Alert 1: <select id="selechH1" style="font-weight:bold;">
           <option>--</option>
          </select>
@@ -28,6 +91,13 @@ Alert 1: <select id="selechH1" style="font-weight:bold;">
                 <option>AM</option>
                 <option>PM</option>
               </select>
+<!--   </div>
+    <div class="checkbox" style="display: inline-block;">
+      <input id="checkbox1" type="checkbox" value="1" />
+      <label for="checkbox1"></label>
+    </div> -->
+    
+     &nbsp<input type="checkbox" id="myCheck1" onchange="handleChange(1)" style="transform: scale(1.6);padding:0;margin: 0;vertical-align: middle;">
   <br>
 Alert 2: <select id="selechH2" style="font-weight:bold;">
           <option>--</option>
@@ -42,6 +112,7 @@ Alert 2: <select id="selechH2" style="font-weight:bold;">
                 <option>AM</option>
                 <option>PM</option>
               </select>  
+   &nbsp<input type="checkbox" id="myCheck2" onchange="handleChange(2)" style="transform: scale(1.6);padding:0;margin: 0;vertical-align: middle;">
     <br>
 Alert 3: <select id="selechH3" style="font-weight:bold;">
           <option>--</option>
@@ -56,6 +127,8 @@ Alert 3: <select id="selechH3" style="font-weight:bold;">
                 <option>AM</option>
                 <option>PM</option>
               </select>    
+   &nbsp<input type="checkbox" id="myCheck3" onchange="handleChange(3)" style="transform: scale(1.6);padding:0;margin: 0;vertical-align: middle;">
+  <br>
  
  <hr>
   Genius Killer 
@@ -167,6 +240,21 @@ function start()
     initDropdownList('selechM2',0,59);
     initDropdownList('selechH3',1,12);
     initDropdownList('selechM3',0,59);
+  }
+function handleChange(i)
+  {
+    if(document.getElementById("myCheck" +i).checked == true)
+      {
+          document.getElementById("selechH"+i).disabled=true;
+          document.getElementById("selechM"+i).disabled=true;
+          document.getElementById("selectSession"+i).disabled=true;
+      }
+    else
+      {
+          document.getElementById("selechH"+i).disabled=false;
+          document.getElementById("selechM"+i).disabled=false;
+          document.getElementById("selectSession"+i).disabled=false;
+      }
   }
 // function alerttime()
 //   {
