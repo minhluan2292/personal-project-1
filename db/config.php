@@ -1,6 +1,6 @@
 <?php 
 $host='mysql.hostinger.vn';
-$hostname='http://minhluan2292.esy.es';
+$hostname='https://studyingjs.herokuapp.com';
 $username='u276811496_luan';
 $password='minh.chien.123';
 $port='3306';
