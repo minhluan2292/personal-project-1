@@ -144,38 +144,38 @@ function gettime()
         var a;
         a=new Date().toLocaleTimeString();
         document.getElementById("utmatning").textContent = a;
-        
-    var h1 = document.getElementById("selechH1").value;
-    var m1 = parseInt(document.getElementById("selechM1").value);
-    var ss1 = document.getElementById("selectSession1").value;
-    if(ss1==="PM")
-      {
-        h1 = (parseInt(h1) < 12) ? parseInt(h1)+12 : parseInt(h1);
-      }
-     else
-       {
-         if(h1==12)
-           {
-             h1=0;
-           }
-       }
+        setAlert(1);
+//     var h1 = document.getElementById("selechH1").value;
+//     var m1 = parseInt(document.getElementById("selechM1").value);
+//     var ss1 = document.getElementById("selectSession1").value;
+//     if(ss1==="PM")
+//       {
+//         h1 = (parseInt(h1) < 12) ? parseInt(h1)+12 : parseInt(h1);
+//       }
+//      else
+//        {
+//          if(h1==12)
+//            {
+//              h1=0;
+//            }
+//        }
     
     
-    if(ss1 !== "--")
-      {
-        var d = new Date();
-        var ahnow =d.getHours();
-        var amnow = d.getMinutes();
-        var asnow = d.getSeconds();
-        var ampmnow = (ahnow >= 12) ? "PM" : "AM";
-        if(h1==ahnow && m1==amnow && asnow=="0" && ss1==ampmnow)
-          {
-            alert("Time out 1");
-            document.getElementById("selechH1").value="--";
-            document.getElementById("selechM1").value="--";
-            document.getElementById("selectSession1").value="--";
-          }
-      }
+//     if(ss1 !== "--")
+//       {
+//         var d = new Date();
+//         var ahnow =d.getHours();
+//         var amnow = d.getMinutes();
+//         var asnow = d.getSeconds();
+//         var ampmnow = (ahnow >= 12) ? "PM" : "AM";
+//         if(h1==ahnow && m1==amnow && asnow=="0" && ss1==ampmnow)
+//           {
+//             alert("Time out 1");
+//             document.getElementById("selechH1").value="--";
+//             document.getElementById("selechM1").value="--";
+//             document.getElementById("selectSession1").value="--";
+//           }
+//       }
      
     var h2 = document.getElementById("selechH2").value;
     var m2 = parseInt(document.getElementById("selechM2").value);
@@ -277,6 +277,41 @@ function handleChange(i)
           document.getElementById("selectSession"+i).disabled=false;
       }
   }
+function setAlert(i)
+  {
+    var h+i = document.getElementById("selechH"+i).value;
+    var m+i = parseInt(document.getElementById("selechM"+i).value);
+    var ss+i = document.getElementById("selectSession"+i).value;
+    if(ss+i==="PM")
+      {
+        h+i = (parseInt(h+i) < 12) ? parseInt(h+i)+12 : parseInt(h+i);
+      }
+     else
+       {
+         if(h+i==12)
+           {
+             h+i=0;
+           }
+       }
+    
+    
+    if(ss+i !== "--")
+      {
+        var d = new Date();
+        var ahnow =d.getHours();
+        var amnow = d.getMinutes();
+        var asnow = d.getSeconds();
+        var ampmnow = (ahnow >= 12) ? "PM" : "AM";
+        if(h+i==ahnow && m+i==amnow && asnow=="0" && ss+i==ampmnow)
+          {
+            alert("Time out " +i);
+            document.getElementById("selechH"+i).value="--";
+            document.getElementById("selechM"+i).value="--";
+            document.getElementById("selectSession"+i).value="--";
+          }
+      }
+  }
+ 
 // function alerttime()
 //   {
 //     var h1 = document.getElementById("selechH1").value;
