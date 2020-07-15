@@ -177,6 +177,9 @@
 				
 				<li>
           <a href="?page=addlinkedin" style="font-size:17px;font-weight:bold;"><i class="fa fa-search-plus"></i>&nbsp;&nbsp;Add linkedin</a>
+        </li>
+        <li>
+          <a href="?page=addlinkedin" style="font-size:17px;font-weight:bold;"><i class="fa fa-search-plus"></i>&nbsp;&nbsp;Detail of owner</a>
 				</li>
 			
 <!--         <li>
